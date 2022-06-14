@@ -10,6 +10,10 @@ expo init todo-app-react-native
 yarn add tailwind-rn
 yarn add date-fns
 
+# Redux Toolkit
+yarn add @reduxjs/toolkit
+yarn add react-redux
+
 # React native navigation
 yarn add @react-navigation/native
 yarn add @react-navigation/native-stack

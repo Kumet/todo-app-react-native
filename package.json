@@ -10,7 +10,10 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
+    "@reduxjs/toolkit": "^1.8.2",
+    "date-fns": "^2.28.0",
     "dotenv": "^16.0.1",
     "expo": "~45.0.0",
     "expo-constants": "~13.1.1",
@@ -23,6 +26,7 @@
     "react-native-safe-area-context": "4.2.4",
     "react-native-screens": "~3.11.1",
     "react-native-web": "0.17.7",
+    "react-redux": "^8.0.2",
     "tailwind-rn": "^4.2.0"
   },
   "devDependencies": {
