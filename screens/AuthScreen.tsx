@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import tw from 'tailwind-rn'
-import {Text, View} from 'react-native'
+import {SafeAreaView, Text} from 'react-native'
 import {FontAwesome} from '@expo/vector-icons'
 import {userFirebaseAuth} from '../hooks/useFirebaseAuth'
 import {Button} from '../components/Button'
@@ -22,7 +22,7 @@ export const AuthScreen: FC = () => {
     } = userFirebaseAuth()
 
     return (
-        <View style={[tw('flex-1 pt-16 items-center'), {backgroundColor: '#008b8b'}]}>
+        <SafeAreaView style={[tw('flex-1 pt-16 items-center'), {backgroundColor: '#008b8b'}]}>
             <FontAwesome name="tasks" size={50} color="white"/>
             <Text style={tw('text-2xl text-white font-semibold mt-2 mb-5')}>
                 {isLogin ? 'Login' : 'SignUp'}
@@ -52,6 +52,6 @@ export const AuthScreen: FC = () => {
                 {isLogin ? 'Create new account ?' : 'Login ?'}
             </Text>
             <IconButton name="retweet" color="#fff" size={24} onPress={toggleMode}/>
-        </View>
+        </SafeAreaView>
     )
 }
