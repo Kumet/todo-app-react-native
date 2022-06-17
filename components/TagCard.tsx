@@ -5,6 +5,8 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack'
 import {RootStackParamList} from '../types/types'
 import {useDeleteTag} from '../hooks/useDeleteTag'
 import tw from 'tailwind-rn'
+import {useDispatch} from 'react-redux'
+import {setSelectedTag} from '../slices/todoSlice'
 
 type Props = {
     id: string
@@ -14,8 +16,15 @@ type Props = {
 const {width} = Dimensions.get('window')
 
 const TagCardMemo: FC<Props> = ({id, name}) => {
+    const dispatch = useDispatch()
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
     const {deleteTag, deleteErr} = useDeleteTag()
+
+    const navToTaskStack = () => {
+        dispatch(setSelectedTag({id, name}))
+        navigation.navigate('TaskStack')
+    }
+
     const deleteTagItem = async (idx: string) => {
         Alert.alert('Deleting', 'Are you sure?', [
             {
@@ -46,6 +55,7 @@ const TagCardMemo: FC<Props> = ({id, name}) => {
                     shadowRadius: 2,
                 }
             ]}
+            onPress={navToTaskStack}
             onLongPress={() => deleteTagItem(id)}>
             <Text
                 style={[tw('text-lg font-medium text-gray-700 py-1'),

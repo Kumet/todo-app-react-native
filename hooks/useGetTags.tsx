@@ -15,7 +15,7 @@ export const useGetTags = () => {
     useEffect(() => {
         const q = query(
             collection(db, 'users', user.uid, 'tags'),
-            orderBy('createAt', 'desc')
+            orderBy('createdAt', 'desc')
         )
         setGetErr('')
         setIsLoading(true)
@@ -28,7 +28,7 @@ export const useGetTags = () => {
                             id: doc.id,
                             name: doc.data().name,
                             createdAt: format(
-                                doc.data({serverTimestamps: 'estimate'}).createAt.toDate(),
+                                doc.data({serverTimestamps: 'estimate'}).createdAt.toDate(),
                                 'yyyy-MM-dd HH:mm',
                             ),
                         } as Tag)

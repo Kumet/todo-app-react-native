@@ -22,7 +22,7 @@ export const useCreateTag = ({navigation}: Props) => {
             try {
                 await addDoc(collection(db, 'users', user.uid, 'tags'), {
                     name,
-                    createAt: serverTimestamp(),
+                    createdAt: serverTimestamp(),
                 })
                 setName('')
                 navigation.goBack()
