@@ -1,5 +1,6 @@
 # todo-app-react-native
 
+- Expo + react-native(typescript) + Firebase + TailwindCSSでTODOアプリを作る 
 ## Setup
 
 ```bash
@@ -7,7 +8,6 @@
 expo init todo-app-react-native
 
 # Tailwind CSS + date-fns
-#yarn add tailwind-rn
 yarn add tailwind-rn@3.0.1
 yarn add date-fns
 
