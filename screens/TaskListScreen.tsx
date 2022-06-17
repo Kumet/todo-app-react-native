@@ -1,7 +1,5 @@
 import React, {FC} from 'react'
 import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from 'react-native'
-import {useSelector} from 'react-redux'
-import {selectTag} from '../slices/todoSlice'
 import tw from 'tailwind-rn'
 import {Title} from '../components/Title'
 import {MaterialIcons} from '@expo/vector-icons'
